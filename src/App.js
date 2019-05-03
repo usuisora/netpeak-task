@@ -3,8 +3,7 @@ import Block1 from './Block1'
  
 
 const mainStyle = {
- fontFamily: 'Roboto, Nanito',
- backgroundColor: '#ccc',
+ backgroundColor: '#eee',
  height: '100vh'
 }
 function App() {

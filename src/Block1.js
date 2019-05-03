@@ -12,26 +12,7 @@ const b2Coords = {
   height: 100
 }
 
-const BoldButton = ({fontWeight,setFontWeight,displayButtom}) => {
-  const boldStyle = {
-    position:'absolute',
-    top:`${b2Coords.marginY}px`,
-    left:`${b2Coords.marginX+b2Coords.width}px`,
-    height:  `${b2Coords.height}px`,
-    margin:0,
-    display: displayButtom
 
-  }
-      return(
-        <button style ={boldStyle} 
-                                      onClick={()=>{ 
-                                                  fontWeight === 200 ? setFontWeight(900) : 
-                                                     setFontWeight(200)
-              }} >Bold</button>
-      )
-}
-            
-            
 
   const Block2   = ({fontWeight,setDisplayButton}) => {
         const style2 = {
@@ -58,7 +39,25 @@ const BoldButton = ({fontWeight,setFontWeight,displayButtom}) => {
           )
   }
  
-
+  const Panel = ({fontWeight,setFontWeight,displayButtom}) =>{
+      const boldStyle = {
+        position:'absolute',
+        top:`${b2Coords.marginY}px`,
+        left:`${b2Coords.marginX+b2Coords.width}px`,
+        height:  `${b2Coords.height}px`,
+        margin:0,
+        display: displayButtom,
+        backgroundColor: '#eee',
+      }
+          return(
+            <div style ={boldStyle}>
+              <button  style ={{padding:'2px'}} onClick={()=>{ 
+                                                        fontWeight === 200 ? setFontWeight(900) : 
+                                                          setFontWeight(200)
+                    }} >Bold</button>
+            </div>
+          )
+    }
 
 const Block1   = ({fontWeight,setFontWeight}) => {
     const style = {
@@ -72,12 +71,11 @@ const Block1   = ({fontWeight,setFontWeight}) => {
       return(
              <div style={style}>
                 <Block2 fontWeight={fontWeight} setDisplayButton={setDisplayButton}  />
-                <BoldButton fontWeight={fontWeight} setFontWeight={setFontWeight} displayButtom={displayButton}  />
+                <Panel fontWeight={fontWeight} setFontWeight={setFontWeight} displayButtom={displayButton}  />
             </div>
       )
 }
 
- 
 
 
 export default Block1
